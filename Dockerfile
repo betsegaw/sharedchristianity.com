@@ -5,6 +5,7 @@ RUN ["apt-get","install","rubygems", "-y"]
 RUN ["apt-get","install","gcc", "-y"]
 RUN ["apt-get","install","make", "-y"]
 RUN ["gem","install","jekyll", "bundler"]
+RUN ["gem","install","rake", "minima","jekyll-feed"]
 
 VOLUME ["/app"]
 VOLUME ["/scripts"]
