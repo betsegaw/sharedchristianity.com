@@ -34,7 +34,7 @@ gulp.task('manual', shell.task([
 // Launches a new instance of the container connected to the terminal.
 //
 gulp.task('livewatch', shell.task([
-  'node .\\node_modules\\live-server\\index.js'
+  'node .\\node_modules\\live-server\\live-server.js'
 ]))
 
 
