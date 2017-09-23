@@ -5,6 +5,6 @@ gulp.task('setup', shell.task([
   'docker build . -t jekyllbuilder:1.0'
 ]))
 
-// gulp.task('run', shell.task([
-//   'docker build . --no-cache -t ghost-dev:1.0'
-// ]))
+gulp.task('build', shell.task([
+  'docker run --rm -it --mount type=bind,source="%cd%/src",target=/app --entrypoint /bin/bash jekyllbuilder:1.0'
+]))
