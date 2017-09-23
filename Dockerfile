@@ -7,3 +7,4 @@ RUN ["apt-get","install","make", "-y"]
 RUN ["gem","install","jekyll", "bundler"]
 
 VOLUME ["/app"]
+VOLUME ["/scripts"]
