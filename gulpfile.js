@@ -16,11 +16,27 @@ gulp.task('build', shell.task([
 ]))
 
 //
+//watchablebuild
+//
+gulp.task('buildwatch', shell.task([
+  'docker run --rm -it --mount type=bind,source="%cd%/src",target=/app --mount type=bind,source="%cd%/scripts",target=/scripts --entrypoint /scripts/build-watch.sh jekyllbuilder:1.0'
+]))
+
+//
 // Launches a new instance of the container connected to the terminal.
 //
 gulp.task('manual', shell.task([
   'docker run --rm -it --mount type=bind,source="%cd%/src",target=/app --mount type=bind,source="%cd%/scripts",target=/scripts --entrypoint /bin/bash jekyllbuilder:1.0'
 ]))
+
+
+//
+// Launches a new instance of the container connected to the terminal.
+//
+gulp.task('livewatch', shell.task([
+  'node .\\node_modules\\live-server\\index.js'
+]))
+
 
 //
 // Deploys to zeit.co
@@ -28,3 +44,5 @@ gulp.task('manual', shell.task([
 gulp.task('deploy', shell.task([
   'now src/sharedchristianity.com/_site/.'
 ]))
+
+gulp.task('watch', ['buildwatch', 'livewatch']);
