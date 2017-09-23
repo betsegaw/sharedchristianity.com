@@ -42,7 +42,7 @@ gulp.task('livewatch', shell.task([
 // Deploys to zeit.co
 //
 gulp.task('deploy', shell.task([
-  'now src/sharedchristianity.com/.'
+  'now ./src/sharedchristianity.com/_site/.'
 ]))
 
 gulp.task('watch', ['buildwatch', 'livewatch']);
