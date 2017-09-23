@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd /app/sharedchristianity.com/_site
+cd /app/sharedchristianity.com/
 jekyll build
