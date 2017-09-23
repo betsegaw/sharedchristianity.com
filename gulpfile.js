@@ -34,15 +34,15 @@ gulp.task('manual', shell.task([
 // Launches a new instance of the container connected to the terminal.
 //
 gulp.task('livewatch', shell.task([
-  'node .\\node_modules\\live-server\\live-server.js'
-]))
+  'node ..\\..\\..\\node_modules\\live-server\\live-server.js'
+], {cwd: "./src/sharedchristianity.com/_site"}))
 
 
 //
 // Deploys to zeit.co
 //
 gulp.task('deploy', shell.task([
-  'now src/sharedchristianity.com/_site/.'
+  'now src/sharedchristianity.com/.'
 ]))
 
 gulp.task('watch', ['buildwatch', 'livewatch']);
